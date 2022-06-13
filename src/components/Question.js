@@ -13,8 +13,9 @@ function Question({ question, onAnswered }) {
       return;
     }
     return ()=> clearTimeout(countdown)
-   })
+   },[timeRemaining, onAnswered])
 
+  
   function handleAnswer(isCorrect) {
     setTimeRemaining(10);
     onAnswered(isCorrect);
